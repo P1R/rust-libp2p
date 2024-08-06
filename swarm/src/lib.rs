@@ -259,6 +259,13 @@ pub enum SwarmEvent<TBehaviourOutEvent> {
         /// The expired address.
         address: Multiaddr,
     },
+    /// One of the listeners notifies of the side effects and completition
+    ListenerSetupDone {
+        /// The listener that notifies the setup.
+        listener_id: ListenerId,
+        /// The setup address that was generated on the setup.
+       address: Multiaddr,
+    },
     /// One of the listeners gracefully closed.
     ListenerClosed {
         /// The listener that closed.
